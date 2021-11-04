@@ -43,7 +43,7 @@ namespace XMLWeather
                 pictureBox2.Image = XMLWeather.Properties.Resources.rain_icon;
                 pictureBox2.Parent = pictureBox1;
             }
-            else if (Convert.ToInt32(Form1.days[0].conditionCode) <= 801)
+            else if (Convert.ToInt32(Form1.days[0].conditionCode) >= 801)
             {
                 pictureBox1.Image = XMLWeather.Properties.Resources.cloudy;
                 pictureBox2.Image = XMLWeather.Properties.Resources.cloudy_icon;
@@ -65,7 +65,7 @@ namespace XMLWeather
             maxTextLabel.Text = Form1.days[0].tempHigh + "°";
 
             dateLabel.Parent = pictureBox1;
-            dateLabel.Text = Form1.days[1].date;
+            dateLabel.Text = Form1.days[0].date;
 
             outdoorCondition.Parent = pictureBox1;
             outdoorCondition.Text = Form1.days[0].condition;
@@ -89,6 +89,7 @@ namespace XMLWeather
 
             SearchScreen ss = new SearchScreen();
             f.Controls.Add(ss);
+            
         }
     }
 }

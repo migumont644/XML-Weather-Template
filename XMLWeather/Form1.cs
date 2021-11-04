@@ -23,13 +23,14 @@ namespace XMLWeather
 
             ExtractForecast();
             ExtractCurrent();
-            
+            //ExtractSearchCurrent();
+
             // open weather screen for todays weather
             CurrentScreen cs = new CurrentScreen();
             this.Controls.Add(cs);
         }
 
-        private void ExtractForecast()
+        public static void ExtractForecast()
         {
             XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/forecast/daily?q=Stratford,CA&mode=xml&units=metric&cnt=7&appid=3f2e224b815c0ed45524322e145149f0");
 
@@ -42,6 +43,9 @@ namespace XMLWeather
                 reader.ReadToFollowing("time");
                 newDay.date = reader.GetAttribute("day");
 
+                reader.ReadToFollowing("symbol");
+                newDay.conditionCode = reader.GetAttribute("number");
+
                 reader.ReadToFollowing("temperature");
 
                 newDay.tempLow = Convert.ToDouble(reader.GetAttribute("min")).ToString("0");
@@ -49,18 +53,17 @@ namespace XMLWeather
 
                 newDay.tempHigh = Convert.ToDouble(reader.GetAttribute("max")).ToString("0");
                 //newDay.tempHigh = reader.GetAttribute("max");
-
+         
 
                 //if day object not null add to the days list
                 days.Add(newDay);
             }
         }
 
-        private void ExtractCurrent()
+        public static void ExtractCurrent()
         {
             // current info is not included in forecast file so we need to use this file to get it
 
-            // string urlCity = "";
             XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=Stratford,CA&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
 
             //find the city and current temperature and add to appropriate item in days list
@@ -76,10 +79,87 @@ namespace XMLWeather
 
         }
 
+        private void ExtractSearchCurrentLondon()
+        {
 
+            XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=London,CA&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
+
+            reader.ReadToFollowing("city");
+            days[0].location = reader.GetAttribute("name");
+
+            reader.ReadToFollowing("temperature");
+            days[0].currentTemp = reader.GetAttribute("value");
+
+            reader.ReadToFollowing("weather");
+            days[0].conditionCode = reader.GetAttribute("number");
+            days[0].condition = reader.GetAttribute("value");
+        }
+
+        private void ExtractSearchCurrentKitchener()
+        {
+
+            XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=Kitchener,CA&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
+
+            reader.ReadToFollowing("city");
+            days[0].location = reader.GetAttribute("name");
+
+            reader.ReadToFollowing("temperature");
+            days[0].currentTemp = reader.GetAttribute("value");
+
+            reader.ReadToFollowing("weather");
+            days[0].conditionCode = reader.GetAttribute("number");
+            days[0].condition = reader.GetAttribute("value");
+        }
+        
+
+             private void ExtractSearchCurrentOttawa()
+        {
+
+            XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=Ottawa,CA&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
+
+            reader.ReadToFollowing("city");
+            days[0].location = reader.GetAttribute("name");
+
+            reader.ReadToFollowing("temperature");
+            days[0].currentTemp = reader.GetAttribute("value");
+
+            reader.ReadToFollowing("weather");
+            days[0].conditionCode = reader.GetAttribute("number");
+            days[0].condition = reader.GetAttribute("value");
+        }
+
+        private void ExtractSearchCurrentToronto()
+        {
+
+            XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=Toronto,CA&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
+
+            reader.ReadToFollowing("city");
+            days[0].location = reader.GetAttribute("name");
+
+            reader.ReadToFollowing("temperature");
+            days[0].currentTemp = reader.GetAttribute("value");
+
+            reader.ReadToFollowing("weather");
+            days[0].conditionCode = reader.GetAttribute("number");
+            days[0].condition = reader.GetAttribute("value");
+        }
+        
+
+             private void ExtractSearchCurrentVancouver()
+        {
+
+            XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=Vancouver,CA&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
+
+            reader.ReadToFollowing("city");
+            days[0].location = reader.GetAttribute("name");
+
+            reader.ReadToFollowing("temperature");
+            days[0].currentTemp = reader.GetAttribute("value");
+
+            reader.ReadToFollowing("weather");
+            days[0].conditionCode = reader.GetAttribute("number");
+            days[0].condition = reader.GetAttribute("value");
+        }
     }
 }
-//if(newDay.date != null)
-//{
-//    days.Add(newDay);
-//}
+//XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=" + urlCity + "&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");

@@ -339,36 +339,36 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Location = new System.Drawing.Point(212, 195);
+            this.pictureBox2.Location = new System.Drawing.Point(261, 199);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(85, 84);
+            this.pictureBox2.Size = new System.Drawing.Size(121, 94);
             this.pictureBox2.TabIndex = 81;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(211, 98);
+            this.pictureBox1.Location = new System.Drawing.Point(260, 98);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 84);
+            this.pictureBox1.Size = new System.Drawing.Size(122, 101);
             this.pictureBox1.TabIndex = 82;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Location = new System.Drawing.Point(212, 293);
+            this.pictureBox3.Location = new System.Drawing.Point(261, 293);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(85, 84);
+            this.pictureBox3.Size = new System.Drawing.Size(121, 99);
             this.pictureBox3.TabIndex = 83;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Location = new System.Drawing.Point(211, 393);
+            this.pictureBox4.Location = new System.Drawing.Point(260, 393);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(85, 84);
+            this.pictureBox4.Size = new System.Drawing.Size(122, 101);
             this.pictureBox4.TabIndex = 84;
             this.pictureBox4.TabStop = false;
             // 

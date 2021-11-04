@@ -163,7 +163,7 @@
             this.outdoorCondition.BackColor = System.Drawing.Color.Transparent;
             this.outdoorCondition.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outdoorCondition.ForeColor = System.Drawing.Color.Transparent;
-            this.outdoorCondition.Location = new System.Drawing.Point(143, 278);
+            this.outdoorCondition.Location = new System.Drawing.Point(80, 278);
             this.outdoorCondition.Name = "outdoorCondition";
             this.outdoorCondition.Size = new System.Drawing.Size(499, 69);
             this.outdoorCondition.TabIndex = 47;
@@ -195,9 +195,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 67);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 67);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(579, 505);
+            this.pictureBox1.Size = new System.Drawing.Size(582, 505);
             this.pictureBox1.TabIndex = 52;
             this.pictureBox1.TabStop = false;
             // 
