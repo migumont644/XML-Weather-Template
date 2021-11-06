@@ -16,6 +16,7 @@ namespace XMLWeather
         //create list to hold day objects
       public static  List<Day> days = new List<Day>();
 
+      public static string urlCity = "London,CA";
 
         public Form1()
         {
@@ -23,7 +24,8 @@ namespace XMLWeather
 
             ExtractForecast();
             ExtractCurrent();
-            //ExtractSearchCurrent();
+            ExtractSearchCurrent();
+
 
             // open weather screen for todays weather
             CurrentScreen cs = new CurrentScreen();
@@ -79,10 +81,10 @@ namespace XMLWeather
 
         }
 
-        private void ExtractSearchCurrentLondon()
+        private void ExtractSearchCurrent()
         {
 
-            XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=London,CA&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
+            XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=" + urlCity + "&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
 
             reader.ReadToFollowing("city");
             days[0].location = reader.GetAttribute("name");
@@ -94,72 +96,7 @@ namespace XMLWeather
             days[0].conditionCode = reader.GetAttribute("number");
             days[0].condition = reader.GetAttribute("value");
         }
-
-        private void ExtractSearchCurrentKitchener()
-        {
-
-            XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=Kitchener,CA&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
-
-            reader.ReadToFollowing("city");
-            days[0].location = reader.GetAttribute("name");
-
-            reader.ReadToFollowing("temperature");
-            days[0].currentTemp = reader.GetAttribute("value");
-
-            reader.ReadToFollowing("weather");
-            days[0].conditionCode = reader.GetAttribute("number");
-            days[0].condition = reader.GetAttribute("value");
-        }
+     
         
-
-             private void ExtractSearchCurrentOttawa()
-        {
-
-            XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=Ottawa,CA&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
-
-            reader.ReadToFollowing("city");
-            days[0].location = reader.GetAttribute("name");
-
-            reader.ReadToFollowing("temperature");
-            days[0].currentTemp = reader.GetAttribute("value");
-
-            reader.ReadToFollowing("weather");
-            days[0].conditionCode = reader.GetAttribute("number");
-            days[0].condition = reader.GetAttribute("value");
-        }
-
-        private void ExtractSearchCurrentToronto()
-        {
-
-            XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=Toronto,CA&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
-
-            reader.ReadToFollowing("city");
-            days[0].location = reader.GetAttribute("name");
-
-            reader.ReadToFollowing("temperature");
-            days[0].currentTemp = reader.GetAttribute("value");
-
-            reader.ReadToFollowing("weather");
-            days[0].conditionCode = reader.GetAttribute("number");
-            days[0].condition = reader.GetAttribute("value");
-        }
-        
-
-             private void ExtractSearchCurrentVancouver()
-        {
-
-            XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=Vancouver,CA&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
-
-            reader.ReadToFollowing("city");
-            days[0].location = reader.GetAttribute("name");
-
-            reader.ReadToFollowing("temperature");
-            days[0].currentTemp = reader.GetAttribute("value");
-
-            reader.ReadToFollowing("weather");
-            days[0].conditionCode = reader.GetAttribute("number");
-            days[0].condition = reader.GetAttribute("value");
-        }
     }
 }
-//XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=" + urlCity + "&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
