@@ -37,7 +37,8 @@ namespace XMLWeather
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1.urlCity = "London,CA";
+            Form1.urlCity = searchTextBox.Text;
+          //  Form1.urlCity = "London,CA";
             Form1.days.Clear();
             Form1.ExtractForecast();
             Form1.ExtractCurrent();

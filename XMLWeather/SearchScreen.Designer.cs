@@ -34,7 +34,7 @@ namespace XMLWeather
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cityLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -94,18 +94,18 @@ namespace XMLWeather
             this.cityLabel.AutoSize = true;
             this.cityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cityLabel.ForeColor = System.Drawing.Color.White;
-            this.cityLabel.Location = new System.Drawing.Point(113, 115);
+            this.cityLabel.Location = new System.Drawing.Point(94, 116);
             this.cityLabel.Name = "cityLabel";
             this.cityLabel.Size = new System.Drawing.Size(349, 69);
             this.cityLabel.TabIndex = 91;
             this.cityLabel.Text = "Search City";
             // 
-            // textBox1
+            // searchTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(188, 253);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 22);
-            this.textBox1.TabIndex = 92;
+            this.searchTextBox.Location = new System.Drawing.Point(188, 253);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(175, 22);
+            this.searchTextBox.TabIndex = 92;
             // 
             // button1
             // 
@@ -124,7 +124,7 @@ namespace XMLWeather
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.cityLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
@@ -143,7 +143,7 @@ namespace XMLWeather
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label cityLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button button1;
     }
 }
